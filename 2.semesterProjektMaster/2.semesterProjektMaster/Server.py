@@ -1,6 +1,8 @@
 import serial # type: ignore
 from flask import Flask, render_template, redirect # type: ignore
 
+#mega diller
+
 app = Flask(__name__)
 
 # UART-indstillinger
