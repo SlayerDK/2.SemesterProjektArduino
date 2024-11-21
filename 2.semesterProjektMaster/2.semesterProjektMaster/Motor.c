@@ -17,7 +17,12 @@ void digitalWrite(uint8_t pin, uint8_t state) {
 
 void step(int16_t number_of_steps, unsigned char motor){
 	//motor = 1, vertical move
+	//negative steps = down
+	//positive steps = up
+	
 	//motor = 0, horizontal move
+	//negative steps = left
+	//positive steps = right
 	if(motor){
 		if(number_of_steps >= 0){
 			digitalWrite(DIR_PIN1, 0); // Retning fremad
