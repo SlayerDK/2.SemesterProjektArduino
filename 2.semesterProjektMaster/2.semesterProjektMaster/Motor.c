@@ -2,18 +2,20 @@
 
 // Initialiser pins som output
 void motor_setup() {
-	// Sæt STEP_PIN1, DIR_PIN1, STEP_PIN2 og DIR_PIN2 som output
+	// Sï¿½t STEP_PIN1, DIR_PIN1, STEP_PIN2 og DIR_PIN2 som output
 	DDRB |= (1 << STEP_PIN1) | (1 << DIR_PIN1) | (1 << STEP_PIN2) | (1 << DIR_PIN2);
 }
 
 // Skriv HIGH eller LOW til en pin
 void digitalWrite(uint8_t pin, uint8_t state) {
 	if (state) {
-		PORTB |= (1 << pin);  // Sæt pin HIGH
+		PORTB |= (1 << pin);  // Sï¿½t pin HIGH
 		} else {
-		PORTB &= ~(1 << pin); // Sæt pin LOW
+		PORTB &= ~(1 << pin); // Sï¿½t pin LOW
 	}
 }
+
+
 
 void step(int16_t number_of_steps, unsigned char motor){
 	//motor = 1, vertical move
@@ -68,7 +70,7 @@ void step(int16_t number_of_steps, unsigned char motor){
 	
 
 
-// Hovedløkken
+// Hovedlï¿½kken
 void loop() {
 	while (1) {
 		// Motor 1 fremad
@@ -82,8 +84,8 @@ void loop() {
 
 		_delay_us(5000);
 
-		// Motor 1 baglæns
-		digitalWrite(DIR_PIN1, 1); // Retning baglæns
+		// Motor 1 baglï¿½ns
+		digitalWrite(DIR_PIN1, 1); // Retning baglï¿½ns
 		for (int x = 0; x < 1450; x++) {
 			digitalWrite(STEP_PIN1, 1);
 			_delay_us(1000);
@@ -104,8 +106,8 @@ void loop() {
 
 		_delay_us(5000);
 
-		// Motor 2 baglæns
-		digitalWrite(DIR_PIN2, 1); // Retning baglæns
+		// Motor 2 baglï¿½ns
+		digitalWrite(DIR_PIN2, 1); // Retning baglï¿½ns
 		for (int x = 0; x < 1450; x++) {
 			digitalWrite(STEP_PIN2, 1);
 			_delay_us(1000);
