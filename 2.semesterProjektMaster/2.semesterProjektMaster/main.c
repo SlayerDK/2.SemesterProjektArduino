@@ -21,21 +21,24 @@ int main(void) {
     int sol = 0;   // Eksempelværdi for sol
 
     while (1) {
-        // Hent de nødvendige trin til korrektion baseret på sensoraflæsninger
+        
+    //  Find ud af, hvor meget motorerne skal flytte sig ud fra, hvad sensorerne siger
         getSteps(&moveVertical, &moveHorizontal);
 
-        // Bevæg motorer baseret på sensorfeedback
-        if (moveVertical != 0) {
+        // Bevæg motorer baseret på sensorens feedback
+        if (moveVertical != 0) 
+        {
             step(moveVertical, 1); // Vertikal motor (1)
         }
 
-        if (moveHorizontal != 0) {
+        if (moveHorizontal != 0)
+        {
             step(moveHorizontal, 0); // Horisontal motor (0)
         }
 
         // Eksempel på læsning af watt og solværdi fra sensorer
-        watt = read_analog(0); // Læs værdi fra sensor (f.eks. kanal 0 for watt)
-        sol = read_analog(1);  // Læs værdi fra sensor (f.eks. kanal 1 for sol)
+        watt = read_analog(0); // Læs værdi fra sensor for watt
+        sol = read_analog(1);  // Læs værdi fra sensor for sol
 
         // Send værdier via UART
         ConvertAndSendValues(watt, sol);
