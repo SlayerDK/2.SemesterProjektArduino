@@ -12,9 +12,9 @@
 
 int main(void) {
     // Initialiser motorer, sensorer og UART-kommunikation
-    motor_setup(); // Sætter motorernes pins som output. 
-    uart_init(MYUBRR); // nitialiserer UART til at sende data
-    adc_init();   //Initialiserer ADC for at læse analoge værdier fra sensorer.
+    motor_setup();  
+    uart_init(MYUBRR); 
+    adc_init();  
 
     int16_t moveVertical = 0, moveHorizontal = 0;
     int watt = 0;  // Eksempelværdi for watt
@@ -26,7 +26,6 @@ int main(void) {
         getSteps(&moveVertical, &moveHorizontal);
 
         // Bevæg motorer baseret på sensorens feedback
-        // step motor flytter motorerne op/ned og venstre/højre baseret på sensordata. 
         if (moveVertical != 0) 
         {
             step(moveVertical, 1); // Vertikal motor (1)
