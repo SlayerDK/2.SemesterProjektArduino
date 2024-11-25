@@ -7,7 +7,7 @@
 
 #include <xc.h>
 #include "motor.h"
-
+#include "Lys.h"
 int main(void)
 {
     motor_setup();
