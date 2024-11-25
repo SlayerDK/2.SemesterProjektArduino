@@ -1,10 +1,3 @@
-/*
- * main.c
- *
- * Created: 11/20/2024 12:18:36 PM
- *  Author: christianwinther
- */ 
-
 #include <xc.h>
 #include "motor.h"
 #include "Lys.h"
@@ -17,12 +10,11 @@ int main(void) {
     adc_init();  
 
     int16_t moveVertical = 0, moveHorizontal = 0;
-    int watt = 0;  // Eksempelværdi for watt
-    int sol = 0;   // Eksempelværdi for sol
+    int sensor1 = 0;  // Værdi fra første sensor
+    int sensor2 = 0;  // Værdi fra anden sensor
 
     while (1) {
-        
-// Aflæser lysintensitet og bestemmer, hvor meget motorerne skal flytte sig med
+        // Aflæser lysintensitet og bestemmer, hvor meget motorerne skal flytte sig med
         getSteps(&moveVertical, &moveHorizontal);
 
         // Bevæg motorer baseret på sensorens feedback
@@ -35,16 +27,17 @@ int main(void) {
         {
             step(moveHorizontal, 0); // Horisontal motor (0)
         }
-// Måler værdier fra lysfølsomme sensorer og gemmer dem som watt og sol. 
-        watt = read_analog(0); // Læs værdi fra sensor for watt
-        sol = read_analog(1);  // Læs værdi fra sensor for sol
 
-    
+        // Måler værdier fra lysfølsomme sensorer
+        sensor1 = read_analog(0); // Læs værdi fra første sensor
+        sensor2 = read_analog(1); // Læs værdi fra anden sensor
+
         // Send værdier via UART
-        ConvertAndSendValues(watt, sol);
+        ConvertAndSendValues(sensor1, sensor2);
 
         _delay_ms(1000);
     }
 
     return 0;
 }
+
