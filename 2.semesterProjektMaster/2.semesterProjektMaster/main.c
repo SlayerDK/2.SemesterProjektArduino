@@ -4,40 +4,39 @@
 #include "kommunikation.h"
 
 int main(void) {
-    // Initialiser motorer, sensorer og UART-kommunikation
-    motor_setup();  
-    uart_init(MYUBRR); 
-    adc_init();  
+    // Initialisering
+    motor_setup();       // Initialiser motorer
+    uart_init(MYUBRR);   // Initialiser UART
+    adc_init();          // Initialiser ADC
 
+    // Variabler til motorbevægelser og sensorværdier
     int16_t moveVertical = 0, moveHorizontal = 0;
-    int sensor1 = 0;  // Værdi fra første sensor
-    int sensor2 = 0;  // Værdi fra anden sensor
+    int watt = 0;        // Lysintensitet fra første sensor
+    int sol = 0;         // Lysintensitet fra anden sensor
 
     while (1) {
-        // Aflæser lysintensitet og bestemmer, hvor meget motorerne skal flytte sig med
+        // Beregn, hvor meget motorerne skal flytte sig
         getSteps(&moveVertical, &moveHorizontal);
 
-        // Bevæg motorer baseret på sensorens feedback
-        if (moveVertical != 0) 
-        {
-            step(moveVertical, 1); // Vertikal motor (1)
+        // Bevæg motorerne baseret på feedback fra sensorerne
+        if (moveVertical != 0) {
+            step(moveVertical, 1); // Flyt vertikalt (motor 1)
         }
 
-        if (moveHorizontal != 0)
-        {
-            step(moveHorizontal, 0); // Horisontal motor (0)
+        if (moveHorizontal != 0) {
+            step(moveHorizontal, 0); // Flyt horisontalt (motor 0)
         }
 
-        // Måler værdier fra lysfølsomme sensorer
-        sensor1 = read_analog(0); // Læs værdi fra første sensor
-        sensor2 = read_analog(1); // Læs værdi fra anden sensor
+        // Læs værdier fra lysfølsomme sensorer
+        watt = read_analog(0); // Måling fra første sensor
+        sol = read_analog(1);  // Måling fra anden sensor
 
-        // Send værdier via UART
-        ConvertAndSendValues(sensor1, sensor2);
+        // Send sensorværdier via UART
+        ConvertAndSendValues(watt, sol);
 
+        // Pause mellem iterationer for at stabilisere justeringer
         _delay_ms(1000);
     }
 
     return 0;
 }
-
