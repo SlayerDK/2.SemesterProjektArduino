@@ -34,7 +34,6 @@ int main(void) {
         // Send sensorværdier via UART
         ConvertAndSendValues(watt, sol);
 
-        // Pause mellem iterationer for at stabilisere justeringer
         _delay_ms(1000);
     }
 
