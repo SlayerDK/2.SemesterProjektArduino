@@ -1,18 +1,19 @@
-#define F_CPU 16000000UL  // 16 MHz clock speed
-#include <avr/io.h>
-#include "uart.h"
-#include <util/delay.h>
-#include <stdlib.h>  // Tilføj til at bruge itoa()
+/*
+ * main.c
+ *
+ * Created: 11/20/2024 12:18:36 PM
+ *  Author: christianwinther
+ */ 
 
-int watt = 0;
-int sol = 0;
-
-int main(void) {
-	
-	while(1)
-	{
-		getSteps();
-		_delay_ms(1000);
-	}
-	return 0;
+#include <xc.h>
+#include "motor.h"
+#include "Lys.h"
+int main(void)
+{
+    motor_setup();
+	step(5000, 1);
+	step(-5000, 1);
+	_delay_ms(5000);
+	step(5000, 0);
+	step(-5000, 0);
 }
