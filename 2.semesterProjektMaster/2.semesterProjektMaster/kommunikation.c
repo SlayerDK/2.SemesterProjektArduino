@@ -7,7 +7,7 @@
 #define BUFFER_SIZE 10
 
 // Funktion til konvertering og afsendelse af værdier
-void ConvertAndSendValues(int watt, int sol) {
+void send_data_to_webserver(int watt, int sol) {
     char watt_str[BUFFER_SIZE];  // Buffer til watt-værdi som tekst
     char sol_str[BUFFER_SIZE];   // Buffer til sol-værdi som tekst
 
