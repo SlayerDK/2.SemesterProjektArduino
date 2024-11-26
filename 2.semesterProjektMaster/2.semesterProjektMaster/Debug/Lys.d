@@ -15,7 +15,8 @@ Lys.d Lys.o: .././Lys.c .././Lys.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\stdio.h
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\stdio.h \
+ .././Motor.h
 
 .././Lys.h:
 
@@ -52,3 +53,5 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h:
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\stdio.h:
+
+.././Motor.h:

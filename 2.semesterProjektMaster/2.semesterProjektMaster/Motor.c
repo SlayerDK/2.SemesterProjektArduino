@@ -17,7 +17,7 @@ void digitalWrite(uint8_t pin, uint8_t state) {
 
 
 
-void step(int16_t number_of_steps, unsigned char motor){
+void send_new_position(int16_t number_of_steps, unsigned char motor){
 	//motor = 1, vertical move
 	//negative steps = down
 	//positive steps = up

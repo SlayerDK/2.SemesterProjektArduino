@@ -1,5 +1,4 @@
 #include "Lys.h"
-#include "motor.h"
 
 // Initialiser UART med den ?nskede baud rate
 void uart_init(unsigned int ubrr) {
