@@ -1,5 +1,4 @@
 #include "Lys.h"
-#include "Motor.h"
 
 // Initialiser ADC med AVcc som reference og prescaler til 128
 void adc_init(void) {
@@ -7,17 +6,13 @@ void adc_init(void) {
 	ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);  // Aktiv?r ADC og prescaler 128
 }
 
-
-
-
-
 // Hjælpefunktion til at beregne trin
 uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t correctionSize) {
 	if (sensor1 < sensor2)
 	{
 		if(sensor2-sensor1>10)
 		{
-			return steps_per_degree * correctionSize;  // Positiv bevægelse
+			return (uint16_t)(steps_per_degree * correctionSize);  // Positiv bevægelse
 		}
 		else
 		{
@@ -30,7 +25,7 @@ uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t cor
 	{
 		if(sensor1-sensor2>10)
 		{
-			return -(steps_per_degree * correctionSize);  // Negativ bevægelse
+			return (uint16_t)(-steps_per_degree * correctionSize);  // Negativ bevægelse
 		}
 		else
 		{
@@ -41,7 +36,7 @@ uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t cor
 	return 0;  // Ingen bevægelse, hvis de er lige
 }
 
-int get_light_intensity(){
+int16_t get_light_intensity(){
 	// Læs sensorværdier
 	uint16_t top = read_analog(0);
 	uint16_t bottom = read_analog(1);

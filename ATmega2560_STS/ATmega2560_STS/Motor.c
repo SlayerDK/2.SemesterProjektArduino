@@ -67,48 +67,36 @@ void send_new_position(int16_t number_of_steps, unsigned char motor){
 
 
 void self_testing() {
+	uint16_t current_step = 0;
+	uint16_t max_lys = 10000;
+	uint16_t lys;
+	uint16_t max_step = 0;
+	uint16_t start_pos_vertical = 0;
+	uint16_t start_pos_horizontal = 0;
+	
 	// Motor 1 fremad
-	digitalWrite(DIR_PIN1, 0); // Retning fremad
-	for (int x = 0; x < 1450; x++) {
-		digitalWrite(STEP_PIN1, 1);
-		_delay_us(1000);
-		digitalWrite(STEP_PIN1, 0);
-		_delay_us(1000);
+	for (current_step; current_step < 1450; current_step++) {
+		lys = get_light_intensity();
+		if (lys < max_lys){
+			max_step = current_step;
+		}
+		send_new_position(1, 1);
 	}
 
-	_delay_us(5000);
-
-	// Motor 1 bagl?ns
-	digitalWrite(DIR_PIN1, 1); // Retning bagl?ns
-	for (int x = 0; x < 1450; x++) {
-		digitalWrite(STEP_PIN1, 1);
-		_delay_us(1000);
-		digitalWrite(STEP_PIN1, 0);
-		_delay_us(1000);
-	}
-
+	start_pos_vertical = max_step - 1450;
+	send_new_position(start_pos_vertical, 1);
 	_delay_us(5000);
 
 	// Motor 2 fremad
-	digitalWrite(DIR_PIN2, 0); // Retning fremad
-	for (int x = 0; x < 1450; x++) {
-		digitalWrite(STEP_PIN2, 1);
-		_delay_us(1000);
-		digitalWrite(STEP_PIN2, 0);
-		_delay_us(1000);
+	for (current_step; current_step < 1450; current_step++) {
+		lys = get_light_intensity();
+		if (lys < max_lys){
+			max_step = current_step;
+		}
+		send_new_position(1, 0);
 	}
 
+	start_pos_horizontal = max_step - 1450;
+	send_new_position(start_pos_horizontal, 0);
 	_delay_us(5000);
-
-	// Motor 2 bagl?ns
-	digitalWrite(DIR_PIN2, 1); // Retning bagl?ns
-	for (int x = 0; x < 1450; x++) {
-		digitalWrite(STEP_PIN2, 1);
-		_delay_us(1000);
-		digitalWrite(STEP_PIN2, 0);
-		_delay_us(1000);
-	}
-
-	// Uendelig ventetilstand
-	while (1);
 }
