@@ -4,7 +4,6 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdio.h>
-#include "Motor.h"
 
 // Konstanter og makroer
 #define F_CPU 16000000UL       // 16 MHz clock frequency

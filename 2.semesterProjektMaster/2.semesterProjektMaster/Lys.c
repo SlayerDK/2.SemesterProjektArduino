@@ -1,4 +1,5 @@
 #include "Lys.h"
+#include "motor.h"
 
 // Initialiser UART med den ?nskede baud rate
 void uart_init(unsigned int ubrr) {
@@ -59,18 +60,18 @@ void getSteps() {
 	{
 		if(moveVertical<0)
 		{
-			//send_new_position(moveVertical, 1); // Vertikal bevægelse (motor = 1)
+			send_new_position(moveVertical, 1); // Vertikal bevægelse (motor = 1)
 			uart_send_string("Moving down\n\r");
 		}
 		else if (moveVertical>0)
 		{
-			//send_new_position(moveVertical, 1); // Vertikal bevægelse (motor = 1)
+			send_new_position(moveVertical, 1); // Vertikal bevægelse (motor = 1)
 			uart_send_string("Moving up\n\r");
 		}
 	}
 	else
 	{
-		//send_new_position(moveVertical, 0); // Horisontal bevægelse (motor = 0)uart_send_string("Not moving\n\r");
+		send_new_position(moveVertical, 0); // Horisontal bevægelse (motor = 0)uart_send_string("Not moving\n\r");
 	}
 	
 				
@@ -98,10 +99,10 @@ void getSteps() {
 
 // Hjælpefunktion til at beregne trin
 uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t correctionSize) {
-	const int16_t stepsPerDegree = 5;  // Trin per grad, kan justeres
+	const int16_t stepsPerDegree = 10;  // Trin per grad, kan justeres
 	if (sensor1 < sensor2) 
 	{
-		if(sensor2-sensor1>10)
+		if(sensor2-sensor1>20)
 		{
 			return stepsPerDegree * correctionSize;  // Positiv bevægelse
 		}
@@ -114,7 +115,7 @@ uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t cor
 		
 	else if (sensor2 < sensor1) 
 	{
-			if(sensor1-sensor2>10)
+			if(sensor1-sensor2>20)
 			{
 				return -(stepsPerDegree * correctionSize);  // Negativ bevægelse
 			}
