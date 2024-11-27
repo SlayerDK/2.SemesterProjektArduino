@@ -1,4 +1,5 @@
 #include "Lys.h"
+#include "Motor.h"
 
 // Initialiser ADC med AVcc som reference og prescaler til 128
 void adc_init(void) {
@@ -33,41 +34,17 @@ void getSteps() {
 	// Beregn trin for hver retning
 	int16_t moveVertical = calculate_sun_position(top, bottom, correctionSize);
 	int16_t moveHorizontal = calculate_sun_position(left, right, correctionSize);
-							
-														//*** Kan alle if statements ikke fjernes? ***\\
+
 	// Udfør motorbevægelser
 	if (moveVertical != 0)
 	{
-		if(moveVertical<0)
-		{
-			send_new_position(moveVertical, 1); // Vertikal bevægelse (motor = 1)
-		}
-		else if (moveVertical>0)
-		{
-			send_new_position(moveVertical, 1); // Vertikal bevægelse (motor = 1)
-		}
-	}
-	else
-	{
-		send_new_position(moveVertical, 0); // Horisontal bevægelse (motor = 0)uart_send_string("Not moving\n\r");
+		send_new_position(moveVertical, 1);
 	}
 	
 	
 	if (moveHorizontal != 0)
 	{
-		if(moveHorizontal<0)
-		{
-			send_new_position(moveHorizontal, 0); // Horisontal bevægelse (motor = 0)
-		}
-		else if (moveHorizontal>0)
-		{
-			send_new_position(moveHorizontal, 0); // Horisontal bevægelse (motor = 0)
-		}
-		
-	}
-	else
-	{
-		send_new_position(moveVertical, 0); // Horisontal bevægelse (motor = 0)uart_send_string("Not moving\n\r");
+		send_new_position(moveHorizontal, 0);
 	}
 }
 
