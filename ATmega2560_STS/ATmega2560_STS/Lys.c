@@ -12,7 +12,7 @@ uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t cor
 	{
 		if(sensor2-sensor1>10)
 		{
-			return (uint16_t)(steps_per_degree * correctionSize);  // Positiv bevægelse
+			return (steps_per_degree * correctionSize);  // Positiv bevægelse
 		}
 		else
 		{
@@ -25,7 +25,7 @@ uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t cor
 	{
 		if(sensor1-sensor2>10)
 		{
-			return (uint16_t)(-steps_per_degree * correctionSize);  // Negativ bevægelse
+			return -(steps_per_degree * correctionSize);  // Negativ bevægelse
 		}
 		else
 		{

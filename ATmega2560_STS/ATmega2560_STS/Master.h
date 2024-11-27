@@ -18,7 +18,7 @@
 #define BAUD 9600              // Baud rate til UART
 #define MYUBRR F_CPU/16/BAUD-1 // Beregning af UBRR-værdi
 #define MAX_ADC_VALUE 1023 // Maksimal ADC-værdi (10-bit ADC)
-#define steps_per_degree (1/0.12) // Antal trin pr. grad (afhængig af motor)
+#define steps_per_degree 10 // Antal trin pr. grad (afhængig af motor)
 
 
 // Definer motor pins

@@ -67,28 +67,37 @@ void send_new_position(int16_t number_of_steps, unsigned char motor){
 
 
 void self_testing() {
-	uint16_t current_step = 0;
+	uint16_t current_step;
 	uint16_t max_lys = 10000;
 	uint16_t lys;
 	uint16_t max_step = 0;
-	uint16_t start_pos_vertical = 0;
-	uint16_t start_pos_horizontal = 0;
+	int16_t start_pos_vertical = 0;
+	//uint16_t start_pos_horizontal = 0;
 	
 	// Motor 1 fremad
-	for (current_step; current_step < 1450; current_step++) {
+	for (current_step = 0; current_step < 1450; current_step++)
+	 {
 		lys = get_light_intensity();
-		if (lys < max_lys){
+		
+		if (lys < max_lys)
+		{
+			max_lys = lys;
 			max_step = current_step;
 		}
+		
 		send_new_position(1, 1);
 	}
 
-	start_pos_vertical = max_step - 1450;
-	send_new_position(start_pos_vertical, 1);
+	//start_pos_vertical = max_step - 1450;
+	send_new_position(-1450, 1);
+	_delay_ms(2000);
+	send_new_position(max_step, 1);
 	_delay_us(5000);
-
+/*
 	// Motor 2 fremad
-	for (current_step; current_step < 1450; current_step++) {
+	max_step = 0;
+	max_lys = 10000;
+	for (current_step = 0; current_step < 1450; current_step++) {
 		lys = get_light_intensity();
 		if (lys < max_lys){
 			max_step = current_step;
@@ -99,4 +108,5 @@ void self_testing() {
 	start_pos_horizontal = max_step - 1450;
 	send_new_position(start_pos_horizontal, 0);
 	_delay_us(5000);
+	*/
 }
