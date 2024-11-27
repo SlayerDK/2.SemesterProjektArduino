@@ -16,6 +16,7 @@
 
 // Funktionsprototyper
 void send_data_to_webserver(int16_t watt, int16_t sol);
+void kommunikatio_test();
 
 
 #endif /* KOMMUNIKATION_H_ */

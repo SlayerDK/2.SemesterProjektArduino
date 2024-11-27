@@ -10,6 +10,11 @@
 #include <stdint.h>
 #include <stdlib.h>  // Tilføj til at bruge itoa()
 
+#include "Lys.h"
+#include "Motor.h"
+#include "Effekt.h"
+#include "Kommunikation.h"
+
 #define BAUD 9600              // Baud rate til UART
 #define MYUBRR F_CPU/16/BAUD-1 // Beregning af UBRR-værdi
 #define MAX_ADC_VALUE 1023 // Maksimal ADC-værdi (10-bit ADC)
@@ -29,7 +34,8 @@
 void uart_init(unsigned int ubrr);           // Initialiser UART
 void uart_send_char(unsigned char data);      // Transmitér én byte via UART
 void uart_send_string(const char* str);      // Send en streng via UART
-
+uint16_t read_analog(uint8_t channel);
+void getSteps();
 
 
 #endif /* MASTER_H_ */

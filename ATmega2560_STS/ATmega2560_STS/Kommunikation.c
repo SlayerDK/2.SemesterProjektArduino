@@ -18,3 +18,14 @@ void send_data_to_webserver(int16_t watt, int16_t sol) {
 	uart_send_string(sol_str);
 	uart_send_string("\r\n");
 }
+
+void kommunikation_test(){
+	uart_send_string("test");
+	_delay_ms(100);
+	uart_send_string("\r\n");
+
+	uart_send_string("test");
+	_delay_ms(100);
+	uart_send_string("\r\n");
+	_delay_ms(5000);
+}

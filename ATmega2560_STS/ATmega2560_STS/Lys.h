@@ -14,7 +14,6 @@
 // Funktionsprototyper
 
 void adc_init(void);                         // Initialiser ADC
-uint16_t read_analog(uint8_t channel);       // Læs analog værdi fra en given kanal
 void getSteps(); // Beregn motorbevægelser
 uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t correctionSize); // Beregn trin
 int get_light_intensity();

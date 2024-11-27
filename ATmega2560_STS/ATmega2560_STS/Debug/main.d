@@ -17,7 +17,7 @@ main.d main.o: .././main.c .././Master.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- .././Motor.h .././Lys.h .././Effekt.h .././Kommunikation.h
+ .././Lys.h .././Motor.h .././Effekt.h .././Kommunikation.h
 
 .././Master.h:
 
@@ -57,9 +57,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
-.././Motor.h:
-
 .././Lys.h:
+
+.././Motor.h:
 
 .././Effekt.h:
 
