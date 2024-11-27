@@ -36,6 +36,7 @@ void uart_send_char(unsigned char data);      // Transmitér én byte via UART
 void uart_send_string(const char* str);      // Send en streng via UART
 uint16_t read_analog(uint8_t channel);
 void getSteps();
+void shutdown();
 
 
 #endif /* MASTER_H_ */

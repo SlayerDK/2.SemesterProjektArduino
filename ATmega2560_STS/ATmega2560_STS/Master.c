@@ -37,6 +37,12 @@ void getSteps() {
 	uint16_t bottom = read_analog(1);
 	uint16_t left = read_analog(2);
 	uint16_t right = read_analog(3);
+	uint16_t shutoff_value = 400;
+	
+	if(top > shutoff_value && bottom > shutoff_value && left > shutoff_value && right > shutoff_value){
+		send_shutdown_message();
+		shutdown();
+	}
 
 	// Justeringsparameter
 	const uint16_t correctionSize = 8;
@@ -55,6 +61,12 @@ void getSteps() {
 	if (moveHorizontal != 0)
 	{
 		send_new_position(moveHorizontal, 0);
+	}
+}
+
+void shutdown(){
+	while (1)
+	{
 	}
 }
 

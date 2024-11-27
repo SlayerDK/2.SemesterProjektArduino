@@ -29,3 +29,13 @@ void kommunikation_test(){
 	uart_send_string("\r\n");
 	_delay_ms(5000);
 }
+
+void send_shutdown_message(){
+	uart_send_string("sun not found, system shut down.");
+	_delay_ms(100);
+	uart_send_string("\r\n");
+	
+	uart_send_string("sun not found, system shut down.");
+	_delay_ms(100);
+	uart_send_string("\r\n");
+}
