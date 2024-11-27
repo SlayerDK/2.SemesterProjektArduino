@@ -37,7 +37,7 @@ void getSteps() {
 	uint16_t bottom = read_analog(1);
 	uint16_t left = read_analog(2);
 	uint16_t right = read_analog(3);
-	uint16_t shutoff_value = 400;
+	uint16_t shutoff_value = 500; //lysværdi sensoren er i et mørkt rum
 	
 	if(top > shutoff_value && bottom > shutoff_value && left > shutoff_value && right > shutoff_value){
 		send_shutdown_message();
