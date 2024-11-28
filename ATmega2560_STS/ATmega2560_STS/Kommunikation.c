@@ -20,14 +20,16 @@ void send_data_to_webserver(int16_t watt, int16_t sol) {
 }
 
 void kommunikation_test(){
-	uart_send_string("test");
-	_delay_ms(100);
-	uart_send_string("\r\n");
+	for(int i = 0; i < 8; i++){
+		uart_send_string("test");
+		_delay_ms(100);
+		uart_send_string("\r\n");
 
-	uart_send_string("test");
-	_delay_ms(100);
-	uart_send_string("\r\n");
-	_delay_ms(5000);
+		uart_send_string("test");
+		_delay_ms(100);
+		uart_send_string("\r\n");
+		_delay_ms(500);
+	}
 }
 
 void send_shutdown_message(){

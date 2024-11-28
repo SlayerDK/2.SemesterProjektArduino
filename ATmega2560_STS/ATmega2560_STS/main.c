@@ -10,6 +10,9 @@ int main(void)
 	motor_setup();
 	uart_init(MYUBRR);
 	
+	self_testing();
+	kommunikation_test();
+	
 	while (1)
 	{
 		send_data_to_webserver(measure_watt(), get_light_intensity());
