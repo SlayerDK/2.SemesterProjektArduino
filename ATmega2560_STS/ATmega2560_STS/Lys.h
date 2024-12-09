@@ -13,7 +13,6 @@
 
 // Funktionsprototyper
 void adc_init();                         // Initialiser ADC
-void getSteps(); // Beregn motorbevægelser
 uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t correctionSize); // Beregn trin
 int16_t get_light_intensity();
 
