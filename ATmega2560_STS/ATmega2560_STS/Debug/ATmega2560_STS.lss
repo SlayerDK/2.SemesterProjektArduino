@@ -1,0 +1,935 @@
+
+ATmega2560_STS.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800200  00800200  000004f4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000004a0  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000004f4  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000524  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000c8  00000000  00000000  00000564  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000183b  00000000  00000000  0000062c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00001019  00000000  00000000  00001e67  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000963  00000000  00000000  00002e80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001b0  00000000  00000000  000037e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000072f  00000000  00000000  00003994  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000009d7  00000000  00000000  000040c3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000088  00000000  00000000  00004a9a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	71 c0       	rjmp	.+226    	; 0xe4 <__ctors_end>
+   2:	00 00       	nop
+   4:	86 c0       	rjmp	.+268    	; 0x112 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	84 c0       	rjmp	.+264    	; 0x112 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	82 c0       	rjmp	.+260    	; 0x112 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	80 c0       	rjmp	.+256    	; 0x112 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	7e c0       	rjmp	.+252    	; 0x112 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	7c c0       	rjmp	.+248    	; 0x112 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	7a c0       	rjmp	.+244    	; 0x112 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	78 c0       	rjmp	.+240    	; 0x112 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	76 c0       	rjmp	.+236    	; 0x112 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	74 c0       	rjmp	.+232    	; 0x112 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	72 c0       	rjmp	.+228    	; 0x112 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	70 c0       	rjmp	.+224    	; 0x112 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	6e c0       	rjmp	.+220    	; 0x112 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	6c c0       	rjmp	.+216    	; 0x112 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	6a c0       	rjmp	.+212    	; 0x112 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	68 c0       	rjmp	.+208    	; 0x112 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	66 c0       	rjmp	.+204    	; 0x112 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	64 c0       	rjmp	.+200    	; 0x112 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	62 c0       	rjmp	.+196    	; 0x112 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	60 c0       	rjmp	.+192    	; 0x112 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	5e c0       	rjmp	.+188    	; 0x112 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	5c c0       	rjmp	.+184    	; 0x112 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	5a c0       	rjmp	.+180    	; 0x112 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	58 c0       	rjmp	.+176    	; 0x112 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	56 c0       	rjmp	.+172    	; 0x112 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	54 c0       	rjmp	.+168    	; 0x112 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	52 c0       	rjmp	.+164    	; 0x112 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	50 c0       	rjmp	.+160    	; 0x112 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	4e c0       	rjmp	.+156    	; 0x112 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	4c c0       	rjmp	.+152    	; 0x112 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	4a c0       	rjmp	.+148    	; 0x112 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	48 c0       	rjmp	.+144    	; 0x112 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	46 c0       	rjmp	.+140    	; 0x112 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	44 c0       	rjmp	.+136    	; 0x112 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	42 c0       	rjmp	.+132    	; 0x112 <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	40 c0       	rjmp	.+128    	; 0x112 <__bad_interrupt>
+  92:	00 00       	nop
+  94:	3e c0       	rjmp	.+124    	; 0x112 <__bad_interrupt>
+  96:	00 00       	nop
+  98:	3c c0       	rjmp	.+120    	; 0x112 <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	3a c0       	rjmp	.+116    	; 0x112 <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	38 c0       	rjmp	.+112    	; 0x112 <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	36 c0       	rjmp	.+108    	; 0x112 <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	34 c0       	rjmp	.+104    	; 0x112 <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	32 c0       	rjmp	.+100    	; 0x112 <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	30 c0       	rjmp	.+96     	; 0x112 <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	2e c0       	rjmp	.+92     	; 0x112 <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	2c c0       	rjmp	.+88     	; 0x112 <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	2a c0       	rjmp	.+84     	; 0x112 <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	28 c0       	rjmp	.+80     	; 0x112 <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	26 c0       	rjmp	.+76     	; 0x112 <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	24 c0       	rjmp	.+72     	; 0x112 <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	22 c0       	rjmp	.+68     	; 0x112 <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	20 c0       	rjmp	.+64     	; 0x112 <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	1e c0       	rjmp	.+60     	; 0x112 <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	1c c0       	rjmp	.+56     	; 0x112 <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	1a c0       	rjmp	.+52     	; 0x112 <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	18 c0       	rjmp	.+48     	; 0x112 <__bad_interrupt>
+	...
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+  f6:	a0 e0       	ldi	r26, 0x00	; 0
+  f8:	b2 e0       	ldi	r27, 0x02	; 2
+  fa:	e0 ea       	ldi	r30, 0xA0	; 160
+  fc:	f4 e0       	ldi	r31, 0x04	; 4
+  fe:	00 e0       	ldi	r16, 0x00	; 0
+ 100:	0b bf       	out	0x3b, r16	; 59
+ 102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+ 104:	07 90       	elpm	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	a0 30       	cpi	r26, 0x00	; 0
+ 10a:	b1 07       	cpc	r27, r17
+ 10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+ 10e:	5f d0       	rcall	.+190    	; 0x1ce <main>
+ 110:	c5 c1       	rjmp	.+906    	; 0x49c <_exit>
+
+00000112 <__bad_interrupt>:
+ 112:	76 cf       	rjmp	.-276    	; 0x0 <__vectors>
+
+00000114 <adc_init>:
+#include "Lys.h"
+
+// Initialiser ADC med AVcc som reference og prescaler til 128
+void adc_init(void) {
+	ADMUX = (1 << REFS0);  // Brug AVcc som reference
+ 114:	80 e4       	ldi	r24, 0x40	; 64
+ 116:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7c007c>
+	ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);  // Aktiv?r ADC og prescaler 128
+ 11a:	87 e8       	ldi	r24, 0x87	; 135
+ 11c:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7c007a>
+ 120:	08 95       	ret
+
+00000122 <calculate_sun_position>:
+}
+
+// Hjælpefunktion til at beregne trin
+uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t correctionSize) {
+	if (sensor1 < sensor2)
+ 122:	86 17       	cp	r24, r22
+ 124:	97 07       	cpc	r25, r23
+ 126:	88 f4       	brcc	.+34     	; 0x14a <calculate_sun_position+0x28>
+	{
+		if(sensor2-sensor1>10)
+ 128:	68 1b       	sub	r22, r24
+ 12a:	79 0b       	sbc	r23, r25
+ 12c:	6b 30       	cpi	r22, 0x0B	; 11
+ 12e:	71 05       	cpc	r23, r1
+ 130:	18 f1       	brcs	.+70     	; 0x178 <calculate_sun_position+0x56>
+		{
+			return (steps_per_degree * correctionSize);  // Positiv bevægelse
+ 132:	ca 01       	movw	r24, r20
+ 134:	88 0f       	add	r24, r24
+ 136:	99 1f       	adc	r25, r25
+ 138:	44 0f       	add	r20, r20
+ 13a:	55 1f       	adc	r21, r21
+ 13c:	44 0f       	add	r20, r20
+ 13e:	55 1f       	adc	r21, r21
+ 140:	44 0f       	add	r20, r20
+ 142:	55 1f       	adc	r21, r21
+ 144:	84 0f       	add	r24, r20
+ 146:	95 1f       	adc	r25, r21
+ 148:	08 95       	ret
+			return 0;
+		}
+		
+	}
+	
+	else if (sensor2 < sensor1)
+ 14a:	68 17       	cp	r22, r24
+ 14c:	79 07       	cpc	r23, r25
+ 14e:	b8 f4       	brcc	.+46     	; 0x17e <calculate_sun_position+0x5c>
+	{
+		if(sensor1-sensor2>10)
+ 150:	86 1b       	sub	r24, r22
+ 152:	97 0b       	sbc	r25, r23
+ 154:	0b 97       	sbiw	r24, 0x0b	; 11
+ 156:	b0 f0       	brcs	.+44     	; 0x184 <calculate_sun_position+0x62>
+		{
+			return -(steps_per_degree * correctionSize);  // Negativ bevægelse
+ 158:	ca 01       	movw	r24, r20
+ 15a:	88 0f       	add	r24, r24
+ 15c:	99 1f       	adc	r25, r25
+ 15e:	44 0f       	add	r20, r20
+ 160:	55 1f       	adc	r21, r21
+ 162:	44 0f       	add	r20, r20
+ 164:	55 1f       	adc	r21, r21
+ 166:	44 0f       	add	r20, r20
+ 168:	55 1f       	adc	r21, r21
+ 16a:	48 0f       	add	r20, r24
+ 16c:	59 1f       	adc	r21, r25
+ 16e:	88 27       	eor	r24, r24
+ 170:	99 27       	eor	r25, r25
+ 172:	84 1b       	sub	r24, r20
+ 174:	95 0b       	sbc	r25, r21
+ 176:	08 95       	ret
+		{
+			return (steps_per_degree * correctionSize);  // Positiv bevægelse
+		}
+		else
+		{
+			return 0;
+ 178:	80 e0       	ldi	r24, 0x00	; 0
+ 17a:	90 e0       	ldi	r25, 0x00	; 0
+ 17c:	08 95       	ret
+		{
+			return 0;
+		}
+		
+	}
+	return 0;  // Ingen bevægelse, hvis de er lige
+ 17e:	80 e0       	ldi	r24, 0x00	; 0
+ 180:	90 e0       	ldi	r25, 0x00	; 0
+ 182:	08 95       	ret
+		{
+			return -(steps_per_degree * correctionSize);  // Negativ bevægelse
+		}
+		else
+		{
+			return 0;
+ 184:	80 e0       	ldi	r24, 0x00	; 0
+ 186:	90 e0       	ldi	r25, 0x00	; 0
+		}
+		
+	}
+	return 0;  // Ingen bevægelse, hvis de er lige
+}
+ 188:	08 95       	ret
+
+0000018a <get_light_intensity>:
+
+int16_t get_light_intensity(){
+ 18a:	ef 92       	push	r14
+ 18c:	ff 92       	push	r15
+ 18e:	0f 93       	push	r16
+ 190:	1f 93       	push	r17
+ 192:	cf 93       	push	r28
+ 194:	df 93       	push	r29
+	// Læs sensorværdier
+	uint16_t top = read_analog(0);
+ 196:	80 e0       	ldi	r24, 0x00	; 0
+ 198:	48 d0       	rcall	.+144    	; 0x22a <read_analog>
+ 19a:	7c 01       	movw	r14, r24
+	uint16_t bottom = read_analog(1);
+ 19c:	81 e0       	ldi	r24, 0x01	; 1
+ 19e:	45 d0       	rcall	.+138    	; 0x22a <read_analog>
+ 1a0:	ec 01       	movw	r28, r24
+	uint16_t left = read_analog(2);
+ 1a2:	82 e0       	ldi	r24, 0x02	; 2
+ 1a4:	42 d0       	rcall	.+132    	; 0x22a <read_analog>
+ 1a6:	8c 01       	movw	r16, r24
+	uint16_t right = read_analog(3);
+ 1a8:	83 e0       	ldi	r24, 0x03	; 3
+ 1aa:	3f d0       	rcall	.+126    	; 0x22a <read_analog>
+ 1ac:	ce 0d       	add	r28, r14
+	
+	int16_t average_light = (int16_t)((top + bottom + left + right) / 4);
+ 1ae:	df 1d       	adc	r29, r15
+ 1b0:	c0 0f       	add	r28, r16
+ 1b2:	d1 1f       	adc	r29, r17
+ 1b4:	8c 0f       	add	r24, r28
+ 1b6:	9d 1f       	adc	r25, r29
+ 1b8:	96 95       	lsr	r25
+	return average_light;
+ 1ba:	87 95       	ror	r24
+ 1bc:	96 95       	lsr	r25
+ 1be:	87 95       	ror	r24
+ 1c0:	df 91       	pop	r29
+ 1c2:	cf 91       	pop	r28
+ 1c4:	1f 91       	pop	r17
+ 1c6:	0f 91       	pop	r16
+ 1c8:	ff 90       	pop	r15
+ 1ca:	ef 90       	pop	r14
+ 1cc:	08 95       	ret
+
+000001ce <main>:
+ 1ce:	2f ef       	ldi	r18, 0xFF	; 255
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1d0:	8f e4       	ldi	r24, 0x4F	; 79
+ 1d2:	93 ec       	ldi	r25, 0xC3	; 195
+ 1d4:	21 50       	subi	r18, 0x01	; 1
+ 1d6:	80 40       	sbci	r24, 0x00	; 0
+ 1d8:	90 40       	sbci	r25, 0x00	; 0
+ 1da:	e1 f7       	brne	.-8      	; 0x1d4 <main+0x6>
+ 1dc:	00 c0       	rjmp	.+0      	; 0x1de <main+0x10>
+ 1de:	00 00       	nop
+#include "Kommunikation.h"
+
+int main(void)
+{
+	_delay_ms(4000);
+	adc_init();
+ 1e0:	99 df       	rcall	.-206    	; 0x114 <adc_init>
+	motor_setup();
+ 1e2:	6c d0       	rcall	.+216    	; 0x2bc <motor_setup>
+ 1e4:	87 e6       	ldi	r24, 0x67	; 103
+	uart_init(MYUBRR);
+ 1e6:	90 e0       	ldi	r25, 0x00	; 0
+ 1e8:	15 d0       	rcall	.+42     	; 0x214 <uart_init>
+	
+	self_testing();
+ 1ea:	1d d1       	rcall	.+570    	; 0x426 <self_testing>
+ 1ec:	2f ef       	ldi	r18, 0xFF	; 255
+ 1ee:	83 e2       	ldi	r24, 0x23	; 35
+ 1f0:	94 ef       	ldi	r25, 0xF4	; 244
+ 1f2:	21 50       	subi	r18, 0x01	; 1
+ 1f4:	80 40       	sbci	r24, 0x00	; 0
+ 1f6:	90 40       	sbci	r25, 0x00	; 0
+ 1f8:	e1 f7       	brne	.-8      	; 0x1f2 <main+0x24>
+ 1fa:	00 c0       	rjmp	.+0      	; 0x1fc <main+0x2e>
+ 1fc:	00 00       	nop
+	_delay_ms(5000);
+	
+	while (1)
+	{
+		getSteps();
+ 1fe:	2a d0       	rcall	.+84     	; 0x254 <getSteps>
+ 200:	2f ef       	ldi	r18, 0xFF	; 255
+ 202:	89 e6       	ldi	r24, 0x69	; 105
+ 204:	98 e1       	ldi	r25, 0x18	; 24
+ 206:	21 50       	subi	r18, 0x01	; 1
+ 208:	80 40       	sbci	r24, 0x00	; 0
+ 20a:	90 40       	sbci	r25, 0x00	; 0
+ 20c:	e1 f7       	brne	.-8      	; 0x206 <main+0x38>
+ 20e:	00 c0       	rjmp	.+0      	; 0x210 <main+0x42>
+ 210:	00 00       	nop
+ 212:	f5 cf       	rjmp	.-22     	; 0x1fe <main+0x30>
+
+00000214 <uart_init>:
+ 214:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7c00c5>
+// Send en streng via UART
+void uart_send_string(const char* str) {
+	while (*str) {
+		uart_send_char(*str++);
+	}
+}
+ 218:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7c00c4>
+ 21c:	88 e1       	ldi	r24, 0x18	; 24
+ 21e:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7c00c1>
+ 222:	86 e0       	ldi	r24, 0x06	; 6
+ 224:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7c00c2>
+ 228:	08 95       	ret
+
+0000022a <read_analog>:
+
+// Generel funktion til at l?se analog v?rdi fra en specificeret kanal (0-7)
+uint16_t read_analog(uint8_t channel) {
+	//channel A0 = top, A1 = bottom, A2 = left, A3 = right
+	channel &= 0x07;  // Begr?ns kanalen til 0-7
+ 22a:	87 70       	andi	r24, 0x07	; 7
+	ADMUX = (ADMUX & 0xF0) | channel;  // sætter A0-A7 til LOW, og vælger den valgte pin
+ 22c:	ec e7       	ldi	r30, 0x7C	; 124
+ 22e:	f0 e0       	ldi	r31, 0x00	; 0
+ 230:	90 81       	ld	r25, Z
+ 232:	90 7f       	andi	r25, 0xF0	; 240
+ 234:	89 2b       	or	r24, r25
+ 236:	80 83       	st	Z, r24
+	ADCSRA |= (1 << ADSC);  // Start konvertering
+ 238:	ea e7       	ldi	r30, 0x7A	; 122
+ 23a:	f0 e0       	ldi	r31, 0x00	; 0
+ 23c:	80 81       	ld	r24, Z
+ 23e:	80 64       	ori	r24, 0x40	; 64
+ 240:	80 83       	st	Z, r24
+	while (ADCSRA & (1 << ADSC));  // Vent p? afslutning
+ 242:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7c007a>
+ 246:	86 fd       	sbrc	r24, 6
+ 248:	fc cf       	rjmp	.-8      	; 0x242 <read_analog+0x18>
+	return ADC;  // Return?r ADC v?rdi
+ 24a:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7c0078>
+ 24e:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7c0079>
+}
+ 252:	08 95       	ret
+
+00000254 <getSteps>:
+
+void getSteps() {
+ 254:	cf 92       	push	r12
+ 256:	df 92       	push	r13
+ 258:	ef 92       	push	r14
+ 25a:	ff 92       	push	r15
+ 25c:	0f 93       	push	r16
+ 25e:	1f 93       	push	r17
+ 260:	cf 93       	push	r28
+ 262:	df 93       	push	r29
+	// Læs sensorværdier
+	uint16_t top = read_analog(0);
+ 264:	80 e0       	ldi	r24, 0x00	; 0
+ 266:	e1 df       	rcall	.-62     	; 0x22a <read_analog>
+ 268:	8c 01       	movw	r16, r24
+	uint16_t bottom = read_analog(1);
+ 26a:	81 e0       	ldi	r24, 0x01	; 1
+ 26c:	de df       	rcall	.-68     	; 0x22a <read_analog>
+ 26e:	6c 01       	movw	r12, r24
+	uint16_t left = read_analog(2);
+ 270:	82 e0       	ldi	r24, 0x02	; 2
+ 272:	db df       	rcall	.-74     	; 0x22a <read_analog>
+ 274:	ec 01       	movw	r28, r24
+	uint16_t right = read_analog(3);
+ 276:	83 e0       	ldi	r24, 0x03	; 3
+ 278:	d8 df       	rcall	.-80     	; 0x22a <read_analog>
+ 27a:	7c 01       	movw	r14, r24
+ 27c:	48 e0       	ldi	r20, 0x08	; 8
+
+	// Justeringsparameter
+	const uint16_t correctionSize = 8;
+
+	// Beregn trin for hver retning
+	int16_t moveVertical = calculate_sun_position(top, bottom, correctionSize);
+ 27e:	50 e0       	ldi	r21, 0x00	; 0
+ 280:	b6 01       	movw	r22, r12
+ 282:	c8 01       	movw	r24, r16
+ 284:	4e df       	rcall	.-356    	; 0x122 <calculate_sun_position>
+ 286:	8c 01       	movw	r16, r24
+ 288:	48 e0       	ldi	r20, 0x08	; 8
+	int16_t moveHorizontal = calculate_sun_position(left, right, correctionSize);
+ 28a:	50 e0       	ldi	r21, 0x00	; 0
+ 28c:	b7 01       	movw	r22, r14
+ 28e:	ce 01       	movw	r24, r28
+ 290:	48 df       	rcall	.-368    	; 0x122 <calculate_sun_position>
+ 292:	ec 01       	movw	r28, r24
+ 294:	01 15       	cp	r16, r1
+
+	// Udfør motorbevægelser
+	if (moveVertical != 0)
+ 296:	11 05       	cpc	r17, r1
+ 298:	19 f0       	breq	.+6      	; 0x2a0 <getSteps+0x4c>
+ 29a:	61 e0       	ldi	r22, 0x01	; 1
+	{
+		send_new_position(moveVertical, 1);
+ 29c:	c8 01       	movw	r24, r16
+ 29e:	2f d0       	rcall	.+94     	; 0x2fe <send_new_position>
+ 2a0:	20 97       	sbiw	r28, 0x00	; 0
+	}
+	
+	
+	if (moveHorizontal != 0)
+ 2a2:	19 f0       	breq	.+6      	; 0x2aa <getSteps+0x56>
+ 2a4:	60 e0       	ldi	r22, 0x00	; 0
+	{
+		send_new_position(moveHorizontal, 0);
+ 2a6:	ce 01       	movw	r24, r28
+ 2a8:	2a d0       	rcall	.+84     	; 0x2fe <send_new_position>
+ 2aa:	df 91       	pop	r29
+ 2ac:	cf 91       	pop	r28
+	}
+}
+ 2ae:	1f 91       	pop	r17
+ 2b0:	0f 91       	pop	r16
+ 2b2:	ff 90       	pop	r15
+ 2b4:	ef 90       	pop	r14
+ 2b6:	df 90       	pop	r13
+ 2b8:	cf 90       	pop	r12
+ 2ba:	08 95       	ret
+
+000002bc <motor_setup>:
+#include "Motor.h"
+
+void motor_setup() {
+	// S?t STEP_PIN1, DIR_PIN1, STEP_PIN2 og DIR_PIN2 som output
+	DDRB |= (1 << STEP_PIN1) | (1 << DIR_PIN1) | (1 << STEP_PIN2) | (1 << DIR_PIN2);
+ 2bc:	84 b1       	in	r24, 0x04	; 4
+ 2be:	8f 60       	ori	r24, 0x0F	; 15
+ 2c0:	84 b9       	out	0x04, r24	; 4
+ 2c2:	08 95       	ret
+
+000002c4 <digitalWrite>:
+}
+
+// Skriv HIGH eller LOW til en pin
+void digitalWrite(uint8_t pin, uint8_t state) {
+	if (state) {
+ 2c4:	66 23       	and	r22, r22
+ 2c6:	69 f0       	breq	.+26     	; 0x2e2 <digitalWrite+0x1e>
+		PORTB |= (1 << pin);  // S?t pin HIGH
+ 2c8:	45 b1       	in	r20, 0x05	; 5
+ 2ca:	21 e0       	ldi	r18, 0x01	; 1
+ 2cc:	30 e0       	ldi	r19, 0x00	; 0
+ 2ce:	b9 01       	movw	r22, r18
+ 2d0:	02 c0       	rjmp	.+4      	; 0x2d6 <digitalWrite+0x12>
+ 2d2:	66 0f       	add	r22, r22
+ 2d4:	77 1f       	adc	r23, r23
+ 2d6:	8a 95       	dec	r24
+ 2d8:	e2 f7       	brpl	.-8      	; 0x2d2 <digitalWrite+0xe>
+ 2da:	cb 01       	movw	r24, r22
+ 2dc:	84 2b       	or	r24, r20
+ 2de:	85 b9       	out	0x05, r24	; 5
+ 2e0:	08 95       	ret
+		} else {
+		PORTB &= ~(1 << pin); // S?t pin LOW
+ 2e2:	45 b1       	in	r20, 0x05	; 5
+ 2e4:	21 e0       	ldi	r18, 0x01	; 1
+ 2e6:	30 e0       	ldi	r19, 0x00	; 0
+ 2e8:	b9 01       	movw	r22, r18
+ 2ea:	02 c0       	rjmp	.+4      	; 0x2f0 <digitalWrite+0x2c>
+ 2ec:	66 0f       	add	r22, r22
+ 2ee:	77 1f       	adc	r23, r23
+ 2f0:	8a 95       	dec	r24
+ 2f2:	e2 f7       	brpl	.-8      	; 0x2ec <digitalWrite+0x28>
+ 2f4:	cb 01       	movw	r24, r22
+ 2f6:	80 95       	com	r24
+ 2f8:	84 23       	and	r24, r20
+ 2fa:	85 b9       	out	0x05, r24	; 5
+ 2fc:	08 95       	ret
+
+000002fe <send_new_position>:
+	}
+}
+
+void send_new_position(int16_t number_of_steps, unsigned char motor){
+ 2fe:	ff 92       	push	r15
+ 300:	0f 93       	push	r16
+ 302:	1f 93       	push	r17
+ 304:	cf 93       	push	r28
+ 306:	df 93       	push	r29
+ 308:	ec 01       	movw	r28, r24
+ 30a:	f6 2e       	mov	r15, r22
+	//positive steps = up
+	
+	//motor = 0, horizontal move
+	//negative steps = left
+	//positive steps = right
+	if(motor){
+ 30c:	66 23       	and	r22, r22
+ 30e:	09 f4       	brne	.+2      	; 0x312 <send_new_position+0x14>
+ 310:	41 c0       	rjmp	.+130    	; 0x394 <send_new_position+0x96>
+		if(number_of_steps >= 0){
+ 312:	99 23       	and	r25, r25
+ 314:	f4 f0       	brlt	.+60     	; 0x352 <send_new_position+0x54>
+			digitalWrite(DIR_PIN1, 0); // Retning fremad
+ 316:	60 e0       	ldi	r22, 0x00	; 0
+ 318:	81 e0       	ldi	r24, 0x01	; 1
+ 31a:	d4 df       	rcall	.-88     	; 0x2c4 <digitalWrite>
+			for(int16_t i = 0; i < number_of_steps; i++){
+ 31c:	00 e0       	ldi	r16, 0x00	; 0
+ 31e:	10 e0       	ldi	r17, 0x00	; 0
+ 320:	14 c0       	rjmp	.+40     	; 0x34a <send_new_position+0x4c>
+				digitalWrite(STEP_PIN1, 1);
+ 322:	61 e0       	ldi	r22, 0x01	; 1
+ 324:	80 e0       	ldi	r24, 0x00	; 0
+ 326:	ce df       	rcall	.-100    	; 0x2c4 <digitalWrite>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 328:	8f e9       	ldi	r24, 0x9F	; 159
+ 32a:	9f e0       	ldi	r25, 0x0F	; 15
+ 32c:	01 97       	sbiw	r24, 0x01	; 1
+ 32e:	f1 f7       	brne	.-4      	; 0x32c <send_new_position+0x2e>
+ 330:	00 c0       	rjmp	.+0      	; 0x332 <send_new_position+0x34>
+ 332:	00 00       	nop
+				_delay_us(1000);
+				digitalWrite(STEP_PIN1, 0);
+ 334:	60 e0       	ldi	r22, 0x00	; 0
+ 336:	80 e0       	ldi	r24, 0x00	; 0
+ 338:	c5 df       	rcall	.-118    	; 0x2c4 <digitalWrite>
+ 33a:	8f e9       	ldi	r24, 0x9F	; 159
+ 33c:	9f e0       	ldi	r25, 0x0F	; 15
+ 33e:	01 97       	sbiw	r24, 0x01	; 1
+ 340:	f1 f7       	brne	.-4      	; 0x33e <send_new_position+0x40>
+ 342:	00 c0       	rjmp	.+0      	; 0x344 <send_new_position+0x46>
+ 344:	00 00       	nop
+	//negative steps = left
+	//positive steps = right
+	if(motor){
+		if(number_of_steps >= 0){
+			digitalWrite(DIR_PIN1, 0); // Retning fremad
+			for(int16_t i = 0; i < number_of_steps; i++){
+ 346:	0f 5f       	subi	r16, 0xFF	; 255
+ 348:	1f 4f       	sbci	r17, 0xFF	; 255
+ 34a:	0c 17       	cp	r16, r28
+ 34c:	1d 07       	cpc	r17, r29
+ 34e:	4c f3       	brlt	.-46     	; 0x322 <send_new_position+0x24>
+				digitalWrite(STEP_PIN1, 0);
+				_delay_us(1000);
+			}
+		}
+		else{
+			digitalWrite(DIR_PIN1, 1); // Retning baglens
+ 350:	21 c0       	rjmp	.+66     	; 0x394 <send_new_position+0x96>
+ 352:	61 e0       	ldi	r22, 0x01	; 1
+ 354:	81 e0       	ldi	r24, 0x01	; 1
+ 356:	b6 df       	rcall	.-148    	; 0x2c4 <digitalWrite>
+			for(int16_t i = 0; i < number_of_steps * -1; i++){
+ 358:	00 e0       	ldi	r16, 0x00	; 0
+ 35a:	10 e0       	ldi	r17, 0x00	; 0
+				digitalWrite(STEP_PIN1, 1);
+ 35c:	14 c0       	rjmp	.+40     	; 0x386 <send_new_position+0x88>
+ 35e:	61 e0       	ldi	r22, 0x01	; 1
+ 360:	80 e0       	ldi	r24, 0x00	; 0
+ 362:	b0 df       	rcall	.-160    	; 0x2c4 <digitalWrite>
+ 364:	8f e9       	ldi	r24, 0x9F	; 159
+ 366:	9f e0       	ldi	r25, 0x0F	; 15
+ 368:	01 97       	sbiw	r24, 0x01	; 1
+ 36a:	f1 f7       	brne	.-4      	; 0x368 <send_new_position+0x6a>
+ 36c:	00 c0       	rjmp	.+0      	; 0x36e <send_new_position+0x70>
+				_delay_us(1000);
+				digitalWrite(STEP_PIN1, 0);
+ 36e:	00 00       	nop
+ 370:	60 e0       	ldi	r22, 0x00	; 0
+ 372:	80 e0       	ldi	r24, 0x00	; 0
+ 374:	a7 df       	rcall	.-178    	; 0x2c4 <digitalWrite>
+ 376:	8f e9       	ldi	r24, 0x9F	; 159
+ 378:	9f e0       	ldi	r25, 0x0F	; 15
+ 37a:	01 97       	sbiw	r24, 0x01	; 1
+ 37c:	f1 f7       	brne	.-4      	; 0x37a <send_new_position+0x7c>
+ 37e:	00 c0       	rjmp	.+0      	; 0x380 <send_new_position+0x82>
+ 380:	00 00       	nop
+				_delay_us(1000);
+			}
+		}
+		else{
+			digitalWrite(DIR_PIN1, 1); // Retning baglens
+			for(int16_t i = 0; i < number_of_steps * -1; i++){
+ 382:	0f 5f       	subi	r16, 0xFF	; 255
+ 384:	1f 4f       	sbci	r17, 0xFF	; 255
+ 386:	88 27       	eor	r24, r24
+ 388:	99 27       	eor	r25, r25
+ 38a:	8c 1b       	sub	r24, r28
+ 38c:	9d 0b       	sbc	r25, r29
+ 38e:	08 17       	cp	r16, r24
+ 390:	19 07       	cpc	r17, r25
+ 392:	2c f3       	brlt	.-54     	; 0x35e <send_new_position+0x60>
+				_delay_us(1000);
+			}
+		}
+	}
+	
+	if(!motor){
+ 394:	f1 10       	cpse	r15, r1
+		if(number_of_steps >= 0){
+ 396:	41 c0       	rjmp	.+130    	; 0x41a <__LOCK_REGION_LENGTH__+0x1a>
+ 398:	dd 23       	and	r29, r29
+			digitalWrite(DIR_PIN2, 0); // Retning fremad
+ 39a:	f4 f0       	brlt	.+60     	; 0x3d8 <send_new_position+0xda>
+ 39c:	60 e0       	ldi	r22, 0x00	; 0
+ 39e:	83 e0       	ldi	r24, 0x03	; 3
+			for(int16_t i = 0; i < number_of_steps; i++){
+ 3a0:	91 df       	rcall	.-222    	; 0x2c4 <digitalWrite>
+ 3a2:	00 e0       	ldi	r16, 0x00	; 0
+ 3a4:	10 e0       	ldi	r17, 0x00	; 0
+				digitalWrite(STEP_PIN2, 1);
+ 3a6:	14 c0       	rjmp	.+40     	; 0x3d0 <send_new_position+0xd2>
+ 3a8:	61 e0       	ldi	r22, 0x01	; 1
+ 3aa:	82 e0       	ldi	r24, 0x02	; 2
+ 3ac:	8b df       	rcall	.-234    	; 0x2c4 <digitalWrite>
+ 3ae:	8f e9       	ldi	r24, 0x9F	; 159
+ 3b0:	9f e0       	ldi	r25, 0x0F	; 15
+ 3b2:	01 97       	sbiw	r24, 0x01	; 1
+ 3b4:	f1 f7       	brne	.-4      	; 0x3b2 <send_new_position+0xb4>
+ 3b6:	00 c0       	rjmp	.+0      	; 0x3b8 <send_new_position+0xba>
+				_delay_us(1000);
+				digitalWrite(STEP_PIN2, 0);
+ 3b8:	00 00       	nop
+ 3ba:	60 e0       	ldi	r22, 0x00	; 0
+ 3bc:	82 e0       	ldi	r24, 0x02	; 2
+ 3be:	82 df       	rcall	.-252    	; 0x2c4 <digitalWrite>
+ 3c0:	8f e9       	ldi	r24, 0x9F	; 159
+ 3c2:	9f e0       	ldi	r25, 0x0F	; 15
+ 3c4:	01 97       	sbiw	r24, 0x01	; 1
+ 3c6:	f1 f7       	brne	.-4      	; 0x3c4 <send_new_position+0xc6>
+ 3c8:	00 c0       	rjmp	.+0      	; 0x3ca <send_new_position+0xcc>
+	}
+	
+	if(!motor){
+		if(number_of_steps >= 0){
+			digitalWrite(DIR_PIN2, 0); // Retning fremad
+			for(int16_t i = 0; i < number_of_steps; i++){
+ 3ca:	00 00       	nop
+ 3cc:	0f 5f       	subi	r16, 0xFF	; 255
+ 3ce:	1f 4f       	sbci	r17, 0xFF	; 255
+ 3d0:	0c 17       	cp	r16, r28
+ 3d2:	1d 07       	cpc	r17, r29
+				digitalWrite(STEP_PIN2, 0);
+				_delay_us(1000);
+			}
+		}
+		else{
+			digitalWrite(DIR_PIN2, 1); // Retning baglens
+ 3d4:	4c f3       	brlt	.-46     	; 0x3a8 <send_new_position+0xaa>
+ 3d6:	21 c0       	rjmp	.+66     	; 0x41a <__LOCK_REGION_LENGTH__+0x1a>
+ 3d8:	61 e0       	ldi	r22, 0x01	; 1
+ 3da:	83 e0       	ldi	r24, 0x03	; 3
+			for(int16_t i = 0; i < number_of_steps * -1; i++){
+ 3dc:	73 df       	rcall	.-282    	; 0x2c4 <digitalWrite>
+ 3de:	00 e0       	ldi	r16, 0x00	; 0
+ 3e0:	10 e0       	ldi	r17, 0x00	; 0
+				digitalWrite(STEP_PIN2, 1);
+ 3e2:	14 c0       	rjmp	.+40     	; 0x40c <__LOCK_REGION_LENGTH__+0xc>
+ 3e4:	61 e0       	ldi	r22, 0x01	; 1
+ 3e6:	82 e0       	ldi	r24, 0x02	; 2
+ 3e8:	6d df       	rcall	.-294    	; 0x2c4 <digitalWrite>
+ 3ea:	8f e9       	ldi	r24, 0x9F	; 159
+ 3ec:	9f e0       	ldi	r25, 0x0F	; 15
+ 3ee:	01 97       	sbiw	r24, 0x01	; 1
+ 3f0:	f1 f7       	brne	.-4      	; 0x3ee <send_new_position+0xf0>
+ 3f2:	00 c0       	rjmp	.+0      	; 0x3f4 <send_new_position+0xf6>
+				_delay_us(1000);
+				digitalWrite(STEP_PIN2, 0);
+ 3f4:	00 00       	nop
+ 3f6:	60 e0       	ldi	r22, 0x00	; 0
+ 3f8:	82 e0       	ldi	r24, 0x02	; 2
+ 3fa:	64 df       	rcall	.-312    	; 0x2c4 <digitalWrite>
+ 3fc:	8f e9       	ldi	r24, 0x9F	; 159
+ 3fe:	9f e0       	ldi	r25, 0x0F	; 15
+ 400:	01 97       	sbiw	r24, 0x01	; 1
+ 402:	f1 f7       	brne	.-4      	; 0x400 <__LOCK_REGION_LENGTH__>
+ 404:	00 c0       	rjmp	.+0      	; 0x406 <__LOCK_REGION_LENGTH__+0x6>
+ 406:	00 00       	nop
+				_delay_us(1000);
+			}
+		}
+		else{
+			digitalWrite(DIR_PIN2, 1); // Retning baglens
+			for(int16_t i = 0; i < number_of_steps * -1; i++){
+ 408:	0f 5f       	subi	r16, 0xFF	; 255
+ 40a:	1f 4f       	sbci	r17, 0xFF	; 255
+ 40c:	88 27       	eor	r24, r24
+ 40e:	99 27       	eor	r25, r25
+ 410:	8c 1b       	sub	r24, r28
+ 412:	9d 0b       	sbc	r25, r29
+ 414:	08 17       	cp	r16, r24
+ 416:	19 07       	cpc	r17, r25
+ 418:	2c f3       	brlt	.-54     	; 0x3e4 <send_new_position+0xe6>
+				digitalWrite(STEP_PIN2, 0);
+				_delay_us(1000);
+			}
+		}
+	}
+}
+ 41a:	df 91       	pop	r29
+ 41c:	cf 91       	pop	r28
+ 41e:	1f 91       	pop	r17
+ 420:	0f 91       	pop	r16
+ 422:	ff 90       	pop	r15
+ 424:	08 95       	ret
+
+00000426 <self_testing>:
+
+
+void self_testing() {
+ 426:	ef 92       	push	r14
+ 428:	ff 92       	push	r15
+ 42a:	0f 93       	push	r16
+ 42c:	1f 93       	push	r17
+ 42e:	cf 93       	push	r28
+ 430:	df 93       	push	r29
+	uint16_t current_step;
+	uint16_t max_lys = 10000;
+	uint16_t lys;
+	uint16_t max_step = 0;
+ 432:	e1 2c       	mov	r14, r1
+ 434:	f1 2c       	mov	r15, r1
+}
+
+
+void self_testing() {
+	uint16_t current_step;
+	uint16_t max_lys = 10000;
+ 436:	00 e1       	ldi	r16, 0x10	; 16
+ 438:	17 e2       	ldi	r17, 0x27	; 39
+	uint16_t max_step = 0;
+	int16_t start_pos_vertical = 0;
+	//uint16_t start_pos_horizontal = 0;
+	
+	// Motor 1 fremad
+	for (current_step = 0; current_step < 1450; current_step++)
+ 43a:	c0 e0       	ldi	r28, 0x00	; 0
+ 43c:	d0 e0       	ldi	r29, 0x00	; 0
+ 43e:	0c c0       	rjmp	.+24     	; 0x458 <self_testing+0x32>
+	 {
+		lys = get_light_intensity();
+ 440:	a4 de       	rcall	.-696    	; 0x18a <get_light_intensity>
+		
+		if (lys < max_lys)
+ 442:	80 17       	cp	r24, r16
+ 444:	91 07       	cpc	r25, r17
+ 446:	18 f4       	brcc	.+6      	; 0x44e <self_testing+0x28>
+		{
+			max_lys = lys;
+			max_step = current_step;
+ 448:	ec 2e       	mov	r14, r28
+ 44a:	fd 2e       	mov	r15, r29
+	 {
+		lys = get_light_intensity();
+		
+		if (lys < max_lys)
+		{
+			max_lys = lys;
+ 44c:	8c 01       	movw	r16, r24
+			max_step = current_step;
+		}
+		
+		send_new_position(1, 1);
+ 44e:	61 e0       	ldi	r22, 0x01	; 1
+ 450:	81 e0       	ldi	r24, 0x01	; 1
+ 452:	90 e0       	ldi	r25, 0x00	; 0
+ 454:	54 df       	rcall	.-344    	; 0x2fe <send_new_position>
+	uint16_t max_step = 0;
+	int16_t start_pos_vertical = 0;
+	//uint16_t start_pos_horizontal = 0;
+	
+	// Motor 1 fremad
+	for (current_step = 0; current_step < 1450; current_step++)
+ 456:	21 96       	adiw	r28, 0x01	; 1
+ 458:	ca 3a       	cpi	r28, 0xAA	; 170
+ 45a:	25 e0       	ldi	r18, 0x05	; 5
+ 45c:	d2 07       	cpc	r29, r18
+ 45e:	80 f3       	brcs	.-32     	; 0x440 <self_testing+0x1a>
+		
+		send_new_position(1, 1);
+	}
+
+	//start_pos_vertical = max_step - 1450;
+	send_new_position(-1450, 1);
+ 460:	61 e0       	ldi	r22, 0x01	; 1
+ 462:	86 e5       	ldi	r24, 0x56	; 86
+ 464:	9a ef       	ldi	r25, 0xFA	; 250
+ 466:	4b df       	rcall	.-362    	; 0x2fe <send_new_position>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 468:	8f ef       	ldi	r24, 0xFF	; 255
+ 46a:	97 ea       	ldi	r25, 0xA7	; 167
+ 46c:	21 e6       	ldi	r18, 0x61	; 97
+ 46e:	81 50       	subi	r24, 0x01	; 1
+ 470:	90 40       	sbci	r25, 0x00	; 0
+ 472:	20 40       	sbci	r18, 0x00	; 0
+ 474:	e1 f7       	brne	.-8      	; 0x46e <self_testing+0x48>
+ 476:	00 c0       	rjmp	.+0      	; 0x478 <self_testing+0x52>
+ 478:	00 00       	nop
+	_delay_ms(2000);
+	send_new_position(max_step, 1);
+ 47a:	61 e0       	ldi	r22, 0x01	; 1
+ 47c:	8e 2d       	mov	r24, r14
+ 47e:	9f 2d       	mov	r25, r15
+ 480:	3e df       	rcall	.-388    	; 0x2fe <send_new_position>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 482:	8f e1       	ldi	r24, 0x1F	; 31
+ 484:	9e e4       	ldi	r25, 0x4E	; 78
+ 486:	01 97       	sbiw	r24, 0x01	; 1
+ 488:	f1 f7       	brne	.-4      	; 0x486 <self_testing+0x60>
+ 48a:	00 c0       	rjmp	.+0      	; 0x48c <self_testing+0x66>
+ 48c:	00 00       	nop
+
+	start_pos_horizontal = max_step - 1450;
+	send_new_position(start_pos_horizontal, 0);
+	_delay_us(5000);
+	*/
+}
+ 48e:	df 91       	pop	r29
+ 490:	cf 91       	pop	r28
+ 492:	1f 91       	pop	r17
+ 494:	0f 91       	pop	r16
+ 496:	ff 90       	pop	r15
+ 498:	ef 90       	pop	r14
+ 49a:	08 95       	ret
+
+0000049c <_exit>:
+ 49c:	f8 94       	cli
+
+0000049e <__stop_program>:
+ 49e:	ff cf       	rjmp	.-2      	; 0x49e <__stop_program>
