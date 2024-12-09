@@ -25,22 +25,22 @@ void uart_send_string(const char* str) {
 uint16_t read_analog(uint8_t channel) {
 	//channel A0 = top, A1 = bottom, A2 = left, A3 = right
 	channel &= 0x07;  // Begr?ns kanalen til 0-7
-	ADMUX = (ADMUX & 0xF0) | channel;  // sætter A0-A7 til LOW, og vælger den valgte pin
+	ADMUX = (ADMUX & 0xF0) | channel;  // sÃ¦tter A0-A7 til LOW, og vÃ¦lger den valgte pin
 	ADCSRA |= (1 << ADSC);  // Start konvertering
 	while (ADCSRA & (1 << ADSC));  // Vent p? afslutning
 	return ADC;  // Return?r ADC v?rdi
 }
 
 void getSteps() {
-	// Læs sensorværdier
+	// LÃ¦s sensorvÃ¦rdier
 	uint16_t top = read_analog(0);
 	uint16_t bottom = read_analog(1);
 	uint16_t left = read_analog(2);
 	uint16_t right = read_analog(3);
-	uint16_t shutoff_value = 500; //lysværdi sensoren er i et mørkt rum
+	uint16_t shutoff_value = 500; //lysvÃ¦rdi sensoren er i et mÃ¸rkt rum
 	
 	if(top > shutoff_value && bottom > shutoff_value && left > shutoff_value && right > shutoff_value){
-		send_shutdown_message();
+		error_message();
 		shutdown();
 	}
 
@@ -51,7 +51,7 @@ void getSteps() {
 	int16_t moveVertical = calculate_sun_position(top, bottom, correctionSize);
 	int16_t moveHorizontal = calculate_sun_position(left, right, correctionSize);
 
-	// Udfør motorbevægelser
+	// UdfÃ¸r motorbevÃ¦gelser
 	if (moveVertical != 0)
 	{
 		send_new_position(moveVertical, 1);
