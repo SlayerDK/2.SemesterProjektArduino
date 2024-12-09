@@ -17,7 +17,6 @@
 // Funktionsprototyper
 void send_data_to_webserver(int16_t watt, int16_t sol);
 void kommunikatio_test();
-void send_shutdown_message();
 void error_message();
 
 
