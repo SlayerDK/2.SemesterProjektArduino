@@ -12,8 +12,8 @@
 #include "Master.h"
 
 // Funktionsprototyper
-void adc_init(void);                         // Initialiser ADC
-void getSteps(); // Beregn motorbevægelser
+void adc_init();                         // Initialiser ADC
+void getSteps(); // Beregn motorbevÃ¦gelser
 uint16_t calculate_sun_position(uint16_t sensor1, uint16_t sensor2, uint16_t correctionSize); // Beregn trin
 int16_t get_light_intensity();
 
