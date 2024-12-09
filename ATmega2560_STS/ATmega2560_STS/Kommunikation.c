@@ -1,15 +1,15 @@
 #include "Kommunikation.h"
 
-// Funktion til konvertering og afsendelse af værdier
+// Funktion til konvertering og afsendelse af vÃ¦rdier
 void send_data_to_webserver(int16_t watt, int16_t sol) {
-	char watt_str[BUFFER_SIZE];  // Buffer til watt-værdi som tekst
-	char sol_str[BUFFER_SIZE];   // Buffer til sol-værdi som tekst
+	char watt_str[BUFFER_SIZE];  // Buffer til watt-vÃ¦rdi som tekst
+	char sol_str[BUFFER_SIZE];   // Buffer til sol-vÃ¦rdi som tekst
 
-	// Konverter værdier til tekst
+	// Konverter vÃ¦rdier til tekst
 	itoa(watt, watt_str, 10);
 	itoa(sol, sol_str, 10);
 	
-	// Send værdier via UART
+	// Send vÃ¦rdier via UART
 	uart_send_string("watt ");
 	uart_send_string(watt_str);
 	uart_send_string("\r\n");
@@ -32,7 +32,7 @@ void kommunikation_test(){
 	}
 }
 
-void send_shutdown_message(){
+void error_message(){
 	uart_send_string("sun not found, system shut down.");
 	_delay_ms(100);
 	uart_send_string("\r\n");
