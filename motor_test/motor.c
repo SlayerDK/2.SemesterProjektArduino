@@ -97,7 +97,7 @@ void loop() {
 
 		// Motor 2 fremad
 		digitalWrite(DIR_PIN2, 0); // Retning fremad
-		for (int x = 0; x < 1450; x++) {
+		for (int x = 0; x < 2500; x++) {
 			digitalWrite(STEP_PIN2, 1);
 			_delay_us(1000);
 			digitalWrite(STEP_PIN2, 0);
@@ -108,7 +108,7 @@ void loop() {
 
 		// Motor 2 bagl?ns
 		digitalWrite(DIR_PIN2, 1); // Retning bagl?ns
-		for (int x = 0; x < 1450; x++) {
+		for (int x = 0; x < 2500; x++) {
 			digitalWrite(STEP_PIN2, 1);
 			_delay_us(1000);
 			digitalWrite(STEP_PIN2, 0);
